@@ -124,11 +124,18 @@ Repeat these steps for each table to load data.
 	5. Click Import.
 
  ## Verifying data:
+1). Data from **patients** table:
  ``` SQL
 	select * from "postgres"."public".patients
 ```
-![Screenshot of Patient's data] (Screenshot 2025-02-11 223801.png)
- 
+![Screenshot 2025-02-11 223801](https://github.com/user-attachments/assets/82942834-f80b-4e9f-b360-f8778523af85)
+
+2). Data from **encounters** table:
+
+``` SQL
+	select * from "postgres"."public".encounters
+```
+
 
  ## Reference :
  https://my.clevelandclinic.org/health/diseases/4335-influenza-flu
