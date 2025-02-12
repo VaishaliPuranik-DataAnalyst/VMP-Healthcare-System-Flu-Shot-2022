@@ -127,7 +127,7 @@ Repeat these steps for each table to load data.
  ``` SQL
 	select * from "postgres"."public".patients
 ```
-! [Screenshot of Patient's data] (https://github.com/VaishaliPuranik-DataAnalyst/VMP-Healthcare-System-Flu-Shot-2022/blob/main/Screenshot%202025-02-11%20223801.png)
+![Screenshot of Patient's data] (Screenshot 2025-02-11 223801.png)
  
 
  ## Reference :
