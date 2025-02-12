@@ -36,25 +36,72 @@ I used the available database "postgres" and schema "public".
 
 ### Creating Tables in the database:
  I created the 3 tables, patients, encounters, and immunizations using the following code:
- ``` sql
+ ``` SQL
+--  Creating table encounters
+
 CREATE TABLE encounters 
 (
-	Id VARCHAR(100)
-	,START TIMESTAMP
-	,STOP TIMESTAMP
-	,PATIENT VARCHAR(100)
-		,ORGANIZATION VARCHAR(100)
-		,PROVIDER VARCHAR(100)
-		,PAYER VARCHAR(100)
-		,ENCOUNTERCLASS VARCHAR(100)
-		,CODE VARCHAR(100)
-		,DESCRIPTION VARCHAR(100)
-		,BASE_ENCOUNTER_COST FLOAT
-		,TOTAL_CLAIM_COST FLOAT
-		,PAYER_COVERAGE FLOAT
-		,REASONCODE VARCHAR(100)
-		--,REASONDESCRIPTION VARCHAR(100)
-	);
+	id VARCHAR(100),
+	start TIMESTAMP,
+	stop TIMESTAMP,
+	patient VARCHAR(100),
+	organization VARCHAR(100),
+	provider VARCHAR(100),
+	payer VARCHAR(100),
+	encounterclass VARCHAR(100),
+	code VARCHAR(100),
+	description VARCHAR(100),
+	base_encounter_class FLOAT,
+	total_claim_cost FLOAT,
+	payer_coverage FLOAT,
+	reasoncode VARCHAR(100)
+	--reasondescription VARCHAR(100)
+);
+-- Creating table immunizations
+
+CREATE TABLE immunizations
+(
+ 	date TIMESTAMP,
+	patient varchar(100),
+	encounter varchar(100),
+	code int,
+	description varchar(500)
+	--BASE_COST float
+);
+
+-- Creating Table patients
+
+CREATE TABLE patients
+(
+	id VARCHAR(100),
+	birthdate date,
+	deathdate date,
+	ssn VARCHAR(100),
+	drivers VARCHAR(100),
+	passport VARCHAR(100),
+	prefix VARCHAR(100),
+	first VARCHAR(100),
+	last VARCHAR(100),
+	suffix VARCHAR(100),
+	maiden VARCHAR(100),
+	marital VARCHAR(100),
+	race VARCHAR(100),
+	ethnicity VARCHAR(100),
+	gender VARCHAR(100),
+	birthplace VARCHAR(100),
+	address VARCHAR(100),
+	city VARCHAR(100),
+	state VARCHAR(100),
+	county VARCHAR(100),
+	FIPS INT, 
+	ZIP INT,
+	lat float,
+	lon float,
+	healthcare_expenses float,
+	healthcare_coverage float,
+	income int,
+	mrn int
+);
 ```
 
  
