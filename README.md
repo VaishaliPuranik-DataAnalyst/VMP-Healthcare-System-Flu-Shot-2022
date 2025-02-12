@@ -39,7 +39,7 @@ I used the available database "postgres" and schema "public".
  ``` SQL
 --  Creating table encounters
 
-CREATE TABLE encounters 
+CREATE TABLE IF NOT EXISTS encounters 
 (
 	id VARCHAR(100),
 	start TIMESTAMP,
@@ -59,9 +59,9 @@ CREATE TABLE encounters
 );
 -- Creating table immunizations
 
-CREATE TABLE immunizations
+CREATE TABLE IF NOT EXISTS immunizations
 (
- 	date TIMESTAMP,
+	date TIMESTAMP,
 	patient varchar(100),
 	encounter varchar(100),
 	code int,
@@ -71,7 +71,7 @@ CREATE TABLE immunizations
 
 -- Creating Table patients
 
-CREATE TABLE patients
+CREATE TABLE IF NOT EXISTS patients
 (
 	id VARCHAR(100),
 	birthdate date,
@@ -93,8 +93,8 @@ CREATE TABLE patients
 	city VARCHAR(100),
 	state VARCHAR(100),
 	county VARCHAR(100),
-	FIPS INT, 
-	ZIP INT,
+	fips INT, 
+	zip INT,
 	lat float,
 	lon float,
 	healthcare_expenses float,
@@ -103,6 +103,40 @@ CREATE TABLE patients
 	mrn int
 );
 ```
+## Importing data into  :
 
+	
+Import the data into the tables:
+After creating tables using SQL query, 
+	a. Right-click on tables under public schema and go to tables
+	b. Right-click on one of the tables, click on import/export data
+In Import/Export data-table conditions,
+	c. In IMPORT, click on the filename and choose the file from where you save the data file, Check the format as a text file or JSON file etc. Here it's .txt file
+	d. In Options, check for OID off and Header On, Deliminiter (separated by), or ., Quote as ", Escape as ', then NULL String as \N
+	d. If everything looks good, click ok in General, and all the data gets imported or loaded into the table.
+	
+Repeat these steps for each table to load data.
+
+	1. Right-click the table to fill it with imported data.
+	2. Point to Tools and select Import Data.
+	3. Select the file to import, specify its format, and click Next.
+	4. Choose the existing tables as a destination for import.
+	5. Click Import.
+
+ ## Verifying data:
+ ``` SQL
+	select * from "postgres"."public".patients
+```
+! [Screenshot of Patient's data] ()
  
+
+ ## Reference :
+ https://my.clevelandclinic.org/health/diseases/4335-influenza-flu
+ 
+ https://www.mayoclinic.org/diseases-conditions/flu/symptoms-causes/syc-20351719
+
+
+
+
+
     
