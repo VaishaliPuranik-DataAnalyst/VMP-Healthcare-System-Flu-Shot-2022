@@ -130,11 +130,24 @@ Repeat these steps for each table to load data.
 ```
 ![Screenshot 2025-02-11 223801](https://github.com/user-attachments/assets/82942834-f80b-4e9f-b360-f8778523af85)
 
+
 2). Data from **encounters** table:
 
 ``` SQL
 	select * from "postgres"."public".encounters
 ```
+![encounters table data](https://github.com/user-attachments/assets/9ea53a91-5e4d-46b7-affc-365c97e627ea)
+
+
+3). Data from immunizations table:
+
+``` SQL
+	select * from "postgres"."public".immunizations
+```
+![immunizations table data](https://github.com/user-attachments/assets/5be3a96e-e0e9-4504-9a4a-89c56bd8f044)
+
+
+
 
 
  ## Reference :
