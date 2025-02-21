@@ -150,12 +150,12 @@ Repeat these steps for each table to load data.
 In this project, the data is synthetically generated, It is mostly clean. I still verified the date format in columns such as date in the immunizations table, start and stop columns in the encounters table, and birthdate and deathdate columns in the patients table.
 
 ## Data extracting :
-I get the patient's demographic information like age, race, county, first and last name, id from patients table. I want to use joins using id as a primary key in patients table and patient as a foreign key in immunizations table, to connect the other tables such as immunizations table to get information about patients who did or did not receive flu shots. Since it's one to many joins, there is a chance that I can get repetitive data/ rows and mess up the calculation of %s of patients getting flu shots. Instead, I used CTES for active patients in 2020 -2022, and flu shots given in 2022. Then join these CTEs or use as a subquery in the main query.
+I get the patient's demographic information like age, race, county, first and last name, id from patients table. I want to use joins using id as a primary key in the patients table and patient as a foreign key in the immunizations table, to connect the other tables such as the immunizations table to get information about patients who did or did not receive flu shots. Since it's one to many joins, there is a chance that I can get repetitive data/ rows and mess up the calculation of %s of patients getting flu shots. Instead, I used CTES for active patients in 2020 -2022, and flu shots given in 2022. Then join these CTEs or use as a subquery in the main query.
 
 #### 1). CTE for Active Patients in 2020-2022
 Active patients mean patients who have had any encounter between 2020 and 2022 and are alive and >= 6 months. Recommended practice is for patients older than 6 months to get the flu shot.
 
-In this CTE, I used join to connect encounters table to patients table to get the patients who are alive and to calculate the age in months for patients who are older than 6 months.
+In this CTE, I used join to connect the encounters table to the patients table to get the patients who are alive and calculate the age in months for patients older than 6 months.
 ``` SQL
  with active_patients as 
  (
@@ -210,6 +210,8 @@ I saved this extracted data as Flu_Shot_data.csv and then used in **Tableau** fo
 
 ## Making a Flu_Shot 2022 Dashboard in Tableau
 https://public.tableau.com/app/profile/vaish.p/viz/VMPHealthacreSystemFluShots2022/Dashboard1
+
+
 
 
 
