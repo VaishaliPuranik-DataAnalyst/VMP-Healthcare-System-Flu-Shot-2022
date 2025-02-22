@@ -211,6 +211,11 @@ I saved this extracted data as Flu_Shot_data.csv and then used in **Tableau** fo
 ## Making a Flu_Shot 2022 Dashboard in Tableau
 https://public.tableau.com/app/profile/vaish.p/viz/VMPHealthacreSystemFluShots2022/Dashboard1
 
+![VMP Healthcare System Flu SHots 2022](https://github.com/VaishaliPuranik-DataAnalyst/VMP-Healthcare-System-Flu-Shot-2022/blob/main/VMP%20Healthcare%20System%20Flu%20Shots%202022.png)
+
+#### The dynamic and interactive dashboard provides insights into:
+% of patients at hospital or clinic got Flu Shots stratified by age, race, county, the cumulative number of patients who received the flu shots over month by month and just the overall % of patients that received the flu shot in 2022.
+
 
 
 
